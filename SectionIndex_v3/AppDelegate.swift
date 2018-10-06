@@ -16,6 +16,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Create a new table view and a navigation
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let tableViewController = TableViewController()
+        let navigationController = UINavigationController(rootViewController: tableViewController)
+        window?.rootViewController = navigationController
+        
+        // Set a title
+        tableViewController.title = "Linh Ka Team"
+        
+        // Title color
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont.boldSystemFontOfSize(25)]
+        
+        // Background color
+        UINavigationBar.appearance().barTintColor = UIColor.blackColor()
+        
+        // Status bar color
+        UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+        
+        // Is initial
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
